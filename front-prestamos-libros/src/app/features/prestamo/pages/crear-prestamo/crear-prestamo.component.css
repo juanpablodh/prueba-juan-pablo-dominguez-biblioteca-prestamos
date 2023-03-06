@@ -1,0 +1,16 @@
+.titulo {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 80%;
+}
+
+button {
+  width: 200px;
+}

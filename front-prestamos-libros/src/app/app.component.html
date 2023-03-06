@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <h1 class="centro">Mi Biblioteca APP 📚</h1>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <div class="centro">
+      <a mat-button routerLinkActive="mat-primary" [routerLink]="'prestamo/listar'">Listar Todos</a>
+      <a mat-button routerLinkActive="mat-primary" [routerLink]="'prestamo/crear'">Prestar</a>
+      <a mat-button routerLinkActive="mat-primary" [routerLink]="'prestamo/activos'" class="disabled">Usuarios con prestamos activos</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="main"><router-outlet></router-outlet></div>

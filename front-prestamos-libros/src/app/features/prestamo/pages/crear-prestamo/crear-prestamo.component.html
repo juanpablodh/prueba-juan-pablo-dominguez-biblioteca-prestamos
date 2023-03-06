@@ -1,0 +1,51 @@
+<h1 class="titulo">Prestar un Libro</h1>
+<form [formGroup]="formulario" (ngSubmit)="prestar($event)">
+  <table>
+    <tr>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>ISBN</mat-label>
+          <input matInput formControlName="isbn" />
+        </mat-form-field>
+        <div *ngIf="formulario.get('isbn')!.errors && formulario.get('isbn')!.touched">
+          <p class="validacionInvalida" *ngIf="formulario.get('isbn')!.hasError('required')">Este campo es obligatorio.</p>
+          <p class="validacionInvalida" *ngIf="formulario.get('isbn')!.hasError('maxlength')">Este campo debe contener máximo 10 carácteres.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>Identificacion de Usuario</mat-label>
+          <input matInput formControlName="identificacionUsuario" />
+        </mat-form-field>
+        <div *ngIf="formulario.get('identificacionUsuario')!.errors && formulario.get('identificacionUsuario')!.touched">
+          <p class="validacionInvalida" *ngIf="formulario.get('identificacionUsuario')!.hasError('required')">Este campo es obligatorio.</p>
+          <p class="validacionInvalida" *ngIf="formulario.get('identificacionUsuario')!.hasError('maxlength')">Este campo debe contener máximo 10 carácteres.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo de Usuario</mat-label>
+          <mat-select formControlName="tipoUsuario">
+            <mat-option *ngFor="let tipoUsuario of tiposUsuario" [value]="tipoUsuario.id">
+              {{ tipoUsuario.descripcion }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div *ngIf="formulario.get('tipoUsuario')!.errors && formulario.get('tipoUsuario')!.touched">
+          <p class="validacionInvalida" *ngIf="formulario.get('tipoUsuario')!.hasError('required')">Este campo es obligatorio.</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr style="text-align: center">
+      <td>
+        <button mat-raised-button color="primary" type="submit">Prestar</button>
+      </td>
+    </tr>
+  </table>
+</form>

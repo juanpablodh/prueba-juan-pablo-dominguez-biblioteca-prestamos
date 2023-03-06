@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.validacionInvalida {
+  width: 100%;
+
+  font-size: 75%;
+  color: #e63757;
+}
+
+.error-mensaje-campos-snackbar {
+  white-space: pre-wrap;
+}
+
+.mat-snack-bar-container {
+  max-width: 800px !important;
+}
+
+.snackBarExitoso {
+  background-color: rgb(192, 255, 195);
+  color: black;
+}

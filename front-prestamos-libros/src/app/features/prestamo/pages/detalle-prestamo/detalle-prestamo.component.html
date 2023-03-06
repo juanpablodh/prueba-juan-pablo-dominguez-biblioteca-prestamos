@@ -1,0 +1,46 @@
+<h1>Detalle del prestamo</h1>
+<form [formGroup]="formulario">
+  <table>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>ID</mat-label>
+          <input matInput readonly formControlName="id" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>ISBN</mat-label>
+          <input matInput readonly formControlName="isbn" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Identificacion de Usuario</mat-label>
+          <input matInput readonly formControlName="identificacionUsuario" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo de Usuario</mat-label>
+          <input matInput readonly formControlName="tipoUsuario" />
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha Maxima Devolución</mat-label>
+          <input matInput readonly formControlName="fechaMaximaDevolucion" />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</form>

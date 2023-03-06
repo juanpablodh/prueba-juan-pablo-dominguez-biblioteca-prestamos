@@ -1,0 +1,43 @@
+<div class="vertical-scroll">
+  <table mat-table [dataSource]="prestamos">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let prestamo">{{ prestamo.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="isbn">
+      <th mat-header-cell *matHeaderCellDef>ISBN</th>
+      <td mat-cell *matCellDef="let prestamo">{{ prestamo.isbn }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="identificacionUsuario">
+      <th mat-header-cell *matHeaderCellDef>Identificación Usuario</th>
+      <td mat-cell *matCellDef="let prestamo">
+        {{ prestamo.identificacionUsuario }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipoUsuario">
+      <th mat-header-cell *matHeaderCellDef>Tipo Usuario</th>
+      <td mat-cell *matCellDef="let prestamo">{{ prestamo.tipoUsuario == 1 ? "Afiliado" : prestamo.tipoUsuario == 2 ? "Empleado" : "Invitado" }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaMaximaDevolucion">
+      <th mat-header-cell *matHeaderCellDef>Fecha Max. Devolución</th>
+      <td mat-cell *matCellDef="let prestamo">
+        {{ prestamo.fechaMaximaDevolucion }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let prestamo">
+        <button mat-stroked-button (click)="verDetalle(prestamo.id)">Detalle</button>
+        <button mat-stroked-button (click)="eliminar(prestamo.id)" color="primary">Eliminar</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
